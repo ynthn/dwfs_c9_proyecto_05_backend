@@ -5,7 +5,8 @@ const cors = require('cors')
 require('dotenv').config();
 
 //ROUTES
-const productRouter = require('./routes/productRoute')
+const productRouter = require('./routes/productRoute');
+const userRouter = require('./routes/userRoute');
 
 //CONFIG DATA BASE
 require('./config/db');
@@ -21,6 +22,7 @@ app.use(express.json());
 
 //USE ROUTE
 app.use(productRouter);
+app.use(userRouter);
 
 //INIT SERVER
 app.listen(process.env.PORT, () => {
