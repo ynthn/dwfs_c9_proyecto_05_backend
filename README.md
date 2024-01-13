@@ -33,6 +33,7 @@ Construir una aplicación de eCommerce con las siguiente funcionalidades:
 * -PROTOTIPADO con la herramienta miro.com
 * -IMAGENES desde freepik.es
 * -ICONOS desde icons.getbootstrap.com
+* -Pasarela de pago Paypal
 
 
 ## 3. Prototipo
@@ -40,5 +41,18 @@ Construir una aplicación de eCommerce con las siguiente funcionalidades:
 
 
 ## 4. Descripción del proyecto
-* -HEADER: se utilizo REACT BOOTSTRAP para usar el componente de NAVBAR
-* -SLIDER: se utilizo REACT BOOTSTRAP para usar el componente de CAROUSEL
+### usuarios
+* Poder crear una cuenta de usuario
+* Poder editar mi cuenta de usuario (contraseña y nombre)
+* Eliminar mi cuenta
+* Iniciar sesión de usuario
+### productos
+* Listar productos desde base de datos
+* Ver imterior de producto seleccionado
+### checkout
+* Agregar productos al carro
+* Eliminar productos al carro
+* Vaciar carro
+### paypal
+* Realizar pago
+* Respuesta posterior al pago

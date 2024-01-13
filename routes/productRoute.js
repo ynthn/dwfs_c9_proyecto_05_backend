@@ -1,5 +1,5 @@
 const express = require('express');
-//const {auth, admin} = require('../middleware/auth')
+
 const {
     getProducts,
     getProductById

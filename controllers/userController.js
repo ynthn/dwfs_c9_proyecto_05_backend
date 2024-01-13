@@ -1,5 +1,10 @@
 const User = require('../models/User.js');
 
+
+
+/**
+ * REGISTER USER
+ */
 const createUser = async (req, res) => {
 
     try {
@@ -27,16 +32,11 @@ const createUser = async (req, res) => {
     }
 }
 
-const getUsers = async (req, res) => {
-    try {
-        const users = await User.find().select('-password -salt');
-        // .populate('favoriteProducts')
-        res.json({ success: true, info: users })
-    } catch (error) {
-        res.json({ success: false, message: error.message })
-    }
-}
 
+
+/**
+ * DATA USER
+ */
 const getProfile = async (req, res) => {
     try {
         const { id } = req.params;
@@ -48,26 +48,41 @@ const getProfile = async (req, res) => {
     }
 }
 
-// Funciones actualizar y delete
-
+/**
+ * UPDATE USER
+ */
 const editUser = async (req, res) => {
 
     try {
-        // throw new Error('error forzado')
         const { id } = req.params;
-        const contain = req.body;
+        const { name, email, password } = req.body;
 
-        const updateUser = await User.findByIdAndUpdate(id, contain, { new: true });
+        console.log(req.body);
+
+        const updateUser = await User.findByIdAndUpdate(id, { name: name }, { new: true });
+
+        if (password == "") {
+            console.log("sinpass");
+        } else {
+            console.log("conpass");
+            updateUser.encriptarPassword(req.body.password);
+            await updateUser.save();
+        }
+
+
 
         res.json({ success: true, msg: "usuario actualizado", updateUser })
     } catch (error) {
-        res.status(500).json({ success: false, message: error.message })
+        res.json({ success: false, message: error.message })
     }
 }
 
+
+/**
+ * DELETE USER
+ */
 const deleteUser = async (req, res) => {
     try {
-        // throw new Error('error forzado')
         const { id } = req.params;
 
         const destroyUser = await User.findByIdAndDelete(id);
@@ -117,8 +132,8 @@ const getVerifyUser = async (req, res) => {
         res.json({ success: true, msg: `Informacion de: ${getInfoUser.email}`, info: getInfoUser })
     } catch (error) {
         console.log("entro");
-        res.json({ success: false, message: error.message })
+        res.json({ success: false, msg: error.message })
     }
 }
 
-module.exports = { createUser, getUsers, editUser, deleteUser, loginUser, getProfile, getVerifyUser };
+module.exports = { createUser, editUser, deleteUser, loginUser, getProfile, getVerifyUser };
