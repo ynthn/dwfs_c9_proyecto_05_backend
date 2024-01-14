@@ -16,13 +16,14 @@ Construir una aplicación de eCommerce con las siguiente funcionalidades:
 * Autenticación (registro de usuario e inicio de sesión, a través de JWT)
 * Autorización (zona privada donde el usuario pueda ver su perfil)
 
-
+URL FINAL: https://friendly-rabanadas-ea40df.netlify.app/
 
 ## 2. Tecnologías utilizadas
 * -HTML 5
 * -CSS
 * -REACT BOOTSTRAP
 * -JAVASCRIPT
+* -LOCALSTORAGE
 * -GIT/GITHUB
 * -NODE.JS (Entorno controlado por eventos diseñado para crear aplicaciones escalables)
 * -ExpressJS (Framework Backend de node.js)
@@ -34,6 +35,8 @@ Construir una aplicación de eCommerce con las siguiente funcionalidades:
 * -IMAGENES desde freepik.es
 * -ICONOS desde icons.getbootstrap.com
 * -Pasarela de pago Paypal
+* -Deploy Backend: https://render.com/
+* -Deploy Frontend: https://www.netlify.com/
 
 
 ## 3. Prototipo
