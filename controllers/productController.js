@@ -107,10 +107,11 @@ const reduceStock = async (req, res) => {
         productPurchased.map(async (product) => {
             await Product.findByIdAndUpdate(product._id, { stock: product.stock - product.quantity })
         })
-        res.status(201).json({ success: true, msg: "Se ha reducio el stocks de los productos" })
+        res.status(201).json({ success: true, msg: "Se ha descontado el stocks de los productos" })
     } catch (error) {
-        res.status(500).json({ success: false, msg: error.message })
+        res.status(201).json({ success: false, msg: "Error al realizar el descuento" });
     }
+
 }
 
 

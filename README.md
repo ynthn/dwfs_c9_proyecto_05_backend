@@ -55,4 +55,5 @@ Construir una aplicación de eCommerce con las siguiente funcionalidades:
 * Vaciar carro
 ### paypal
 * Realizar pago
-* Respuesta posterior al pago
+* Respuesta posterior al pago correcto
+* Respuesta posterior al pago no realizado
